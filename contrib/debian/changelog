@@ -1,0 +1,6 @@
+tricoin (0.8.5-natty3) natty; urgency=low
+
+  * First dpkg release
+
+ -- Meeh <meeh@i2pmail.org>  Sun, 15 Sep 2013 02:28:00 +0100
+

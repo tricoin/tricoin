@@ -1,0 +1,6 @@
+tricoin-qt usr/bin
+share/pixmaps/tricoin32.xpm usr/share/pixmaps
+share/pixmaps/tricoin16.xpm usr/share/pixmaps
+share/pixmaps/tricoin128.png usr/share/pixmaps
+debian/tricoin-qt.desktop usr/share/applications
+debian/tricoin-qt.protocol usr/share/kde4/services/

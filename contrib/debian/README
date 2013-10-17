@@ -1,0 +1,20 @@
+This directory contains files used to package tricoind/tricoin-qt
+for Debian-based Linux systems.
+
+If you compile tricoind/tricoin-qt yourself, there are some
+useful files here:
+
+tricoin: URI support
+--------------------
+
+tricoin-qt.desktop  (Gnome / Open Desktop)
+To install:
+  sudo desktop-file-install tricoin-qt.desktop
+  sudo update-desktop-database
+
+If you build yourself, you will either need to modify the paths in
+the .desktop file or copy or symlink your tricoin-qt binary to /usr/bin
+and the ../../share/pixmaps/tricoin128.png to /usr/share/pixmaps
+
+tricoin-qt.protocol (KDE)
+

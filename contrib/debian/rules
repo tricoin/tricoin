@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+#DEB_MAKE_CHECK_TARGET = test_tricoin
+#build/tricoind::
+#	$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),,src/test_tricoin)
+
+DEB_INSTALL_EXAMPLES_tricoind += debian/examples/*
+DEB_INSTALL_MANPAGES_tricoind += debian/manpages/*
+
+%:
+	dh --with bash-completion $@
+
+override_dh_auto_build:
+	cd src; $(MAKE) -f makefile.unix tricoind
+	$(MAKE)
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then $(MAKE) clean; else rm -rf build/; rm -f tricoin-qt; fi
+	cd src; $(MAKE) -f makefile.unix clean
+
+override_dh_auto_configure:
+	qmake tricoin-qt.pro USE_QRCODE=1
+
+override_dh_auto_test:
+	cd src; $(MAKE) -f makefile.unix test_tricoin
+	src/test_tricoin
+
+# Ensure wrapper is set executable
+binary-post-install/tricoind:
+	chmod +x $(cdbs_curdestdir)usr/bin/tricoind
+binary-post-install/tricoin-qt:
+	chmod +x $(cdbs_curdestdir)usr/bin/tricoin-qt

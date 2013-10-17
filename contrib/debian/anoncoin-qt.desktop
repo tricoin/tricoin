@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tricoin
+Comment=Tricoin P2P Cryptocurrency
+Comment[fr]=Tricoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Tricoin, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/tricoin-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/tricoin128.png
+MimeType=x-scheme-handler/tricoin;
+Categories=Office;
